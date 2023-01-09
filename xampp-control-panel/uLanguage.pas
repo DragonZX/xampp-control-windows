@@ -12,8 +12,10 @@ type
     gbOptions: TGroupBox;
     ImgEn: TImage;
     ImgDe: TImage;
+    ImgRu: TImage;
     rbEn: TRadioButton;
     rbDe: TRadioButton;
+    rbRu: TRadioButton;
     bOkay: TBitBtn;
     bAbort: TBitBtn;
     procedure bOkClick(Sender: TObject);
@@ -47,6 +49,8 @@ begin
     Config.Language := 'en'
   else if rbDe.Checked then
     Config.Language := 'de'
+  else if rbRu.Checked then
+    Config.Language := 'ru'
   else
     Config.Language := 'en';
   ModalResult := mrOk;
@@ -77,6 +81,8 @@ begin
     rbEn.Checked := true
   else if Config.Language = 'de' then
     rbDe.Checked := true
+  else if Config.Language = 'ru' then
+    rbRu.Checked := true
   else
     rbEn.Checked := true;
 end;
@@ -86,6 +92,8 @@ begin
   if (Sender = rbEn) or (Sender = ImgEn) then
     rbEn.Checked := true;
   if (Sender = rbDe) or (Sender = ImgDe) then
+    rbDe.Checked := true;
+  if (Sender = rbRu) or (Sender = ImgRu) then
     rbDe.Checked := true;
 end;
 
